@@ -23,7 +23,7 @@ module ApartmentApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
-
+    config.hosts << "72003523330a4431ba3d0a7a6baa0841.vfs.cloud9.us-west-2.amazonaws.com"
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
