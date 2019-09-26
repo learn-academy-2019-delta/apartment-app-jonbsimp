@@ -1,16 +1,36 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
 import {
   Jumbotron
-} from "reactstrap"
+} from "reactstrap";
+import { 
+  BrowserRouter as  Router,
+  Route, 
+  Link 
+  
+} from 'react-router-dom';
+
 
 class MainApp extends React.Component {
   render () {
+    const {
+      logged_in,
+      sign_in_route,
+      sign_out_route
+    } = this.props
+    
     return (
       <React.Fragment>
-      <Jumbotron>
-        <center><h1>Hello Jon</h1></center>
-      </Jumbotron>
+        {logged_in &&
+          <div>
+            <a href={sign_out_route}>Sign Out</a>
+          </div>
+        }
+        {!logged_in &&
+          <div>
+            <a href={sign_in_route}>Sign In</a>
+          </div>
+        }
       </React.Fragment>
      
     );
